@@ -262,7 +262,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.3; }
 .photo-groups {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   background: #fff;
 }
