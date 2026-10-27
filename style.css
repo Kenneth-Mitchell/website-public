@@ -877,9 +877,9 @@ ul.posts a:hover { text-decoration: underline; }
   position: fixed;
   top: 1rem;
   right: 1rem;
-  width: 36px;
-  height: 36px;
-  padding: 9px 8px;
+  width: 44px;
+  height: 44px;
+  padding: 13px 12px;
   background: var(--bg);
   border: 1px solid var(--rule);
   cursor: pointer;
@@ -911,11 +911,11 @@ ul.posts a:hover { text-decoration: underline; }
 
 .toc {
   position: fixed;
-  top: 4rem;
+  top: 4.5rem;
   right: 1rem;
   width: calc(100vw - 2rem);
-  max-width: 280px;
-  max-height: calc(100vh - 5rem);
+  max-width: 320px;
+  max-height: calc(100dvh - 6rem);
   overflow-y: auto;
   background: var(--bg);
   border: 1px solid var(--rule);
@@ -930,7 +930,7 @@ ul.posts a:hover { text-decoration: underline; }
 
 .toc-title {
   color: var(--muted);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.875rem;
 }
 
 .toc ul {
@@ -943,9 +943,26 @@ ul.posts a:hover { text-decoration: underline; }
   padding-left: 0;
 }
 
-.toc li { margin: 0.2rem 0; }
+.toc li { margin: 0; }
+
+#TableOfContents > ul > li + li {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.toc li ul {
+  margin-top: 0.5rem;
+}
+
+.toc li li + li {
+  margin-top: 0.5rem;
+}
 
 .toc a {
+  display: block;
+  padding: 0.125rem 0;
+  line-height: 1.5;
   color: var(--text);
   text-decoration: none;
 }
@@ -966,8 +983,8 @@ ul.posts a:hover { text-decoration: underline; }
     top: 4rem;
     left: calc(50% + 360px + 2rem);
     right: auto;
-    width: 180px;
-    max-width: 180px;
+    width: min(240px, calc(50vw - 26rem));
+    max-width: none;
     max-height: calc(100vh - 6rem);
     background: transparent;
     border: none;
@@ -981,6 +998,43 @@ article p { margin: 0 0 1.25rem; }
 
 article h2 { font-size: 1.2rem; margin: 2rem 0 0.75rem; }
 article h3 { font-size: 1.05rem; margin: 1.75rem 0 0.5rem; }
+
+.prose {
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
+.prose h2 {
+  margin: 3.5rem 0 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 1.5rem;
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 1199px) {
+  .toc a {
+    min-height: 44px;
+    padding: 0.625rem 0;
+  }
+
+  .prose h2 {
+    scroll-margin-top: 5rem;
+  }
+}
 
 article blockquote {
   margin: 1.25rem 0;
